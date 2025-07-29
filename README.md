@@ -1,2 +1,2 @@
 # AcademiaBGT
-Projeto desenvolvido no TDSIFB
+Projeto desenvolvido no Técnico em Desenvolvimento de Sistemas do IFB
