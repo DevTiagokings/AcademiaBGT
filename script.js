@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function()
 {
-    const menuIcon = document.querySelector('.menu-icon');
+    
+  
+    const menuIcon = document.querySelector('.menu-icon');  /* "menu hambúrguer" */
 
     const navMenu = document.querySelector('.nav-menu');
 
@@ -11,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function()
             navMenu.classList.toggle('active');
         });
     }
-    
+
+    /*modal/carrossel*/
 
     const openModalButtons = document.querySelectorAll('.open-modal-btn');
 
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function()
     const modal = document.getElementById('modal');
 
     const closeModalButton = document.getElementById('close-button');
-    
+
     const modalTitle = document.getElementById('modal-title');
 
     const modalDescription = document.getElementById('modal-description');
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function()
 
     let currentImageIndex = 0;
 
+
     function showImage(index)
     {
         const images = carouselImagesContainer.querySelectorAll('img');
@@ -46,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function()
             images[index].classList.add('active');
         }
     }
+
 
     function openModal(button)
     {
@@ -77,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function()
 
         modalOverlay.classList.remove('hidden');
     }
+
+
 
     function closeModal()
     {
@@ -112,10 +119,9 @@ document.addEventListener('DOMContentLoaded', function()
     nextButton.addEventListener('click', () =>
     {
         currentImageIndex++;
-
         if (currentImageIndex >= currentImages.length)
         {
-            currentImageIndex = 0; 
+            currentImageIndex = 0;
         }
 
         showImage(currentImageIndex);
@@ -127,9 +133,40 @@ document.addEventListener('DOMContentLoaded', function()
 
         if (currentImageIndex < 0)
         {
-            currentImageIndex = currentImages.length - 1; 
+            currentImageIndex = currentImages.length - 1;
         }
 
         showImage(currentImageIndex);
     });
-});
+
+
+    /* botão ToTop*/
+
+    const backToTopButton = document.getElementById('back-to-top-btn');
+
+    function toggleBackToTopButton()
+    {
+        if (window.scrollY > 300)
+        {
+            backToTopButton.classList.add('show');
+
+        } else
+        {
+            backToTopButton.classList.remove('show');
+        }
+    }
+
+    function scrollToTop(event)
+    {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    window.addEventListener('scroll', toggleBackToTopButton);
+
+    backToTopButton.addEventListener('click', scrollToTop);
+
+}); 

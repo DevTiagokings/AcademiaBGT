@@ -46,9 +46,9 @@ header
     z-index: 1000;
 }
 
-header .container
+header .container /*flex box */
 {
-    display: flex;
+    display: flex;                      
     justify-content: space-between;
     align-items: center;
 }
@@ -66,13 +66,13 @@ header .container
     color: var(--primary-color);
 }
 
-.nav-menu
+.nav-menu /*flex box */
 {
     list-style: none;
     display: flex;
 }
 
-.nav-menu li
+.nav-menu li /*flex box */
 {
     margin-left: 30px;
 }
@@ -97,7 +97,7 @@ header .container
     cursor: pointer;
 }
 
-.btn
+.btn   /*botão */
 {
     padding: 12px 25px;
     text-decoration: none;
@@ -133,9 +133,9 @@ header .container
 
 
 
-.hero
+.hero /*flex box */
 {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.unsplash.com/photo-1574680096145-d05b474e2155?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxneW18ZW58MHx8fHwxNzIxOTk5NDgyfDA&ixlib=rb-4.0.3&q=80&w=1080) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://www.fiberoficial.com.br/cdn/shop/articles/academia_musculacao.jpg?v=1687444110&width=2048) no-repeat center center/cover;
     height: 90vh;
     display: flex;
     align-items: center;
@@ -176,7 +176,7 @@ header .container
     gap: 30px;
 }
 
-.card
+.card /*flex box */
 {
     background-color: #FFF;
     border-radius: 10px;
@@ -223,7 +223,7 @@ header .container
     cursor: pointer;
 }
 
-.cta
+.cta /*call to action */
 {
     background-color: var(--dark-bg);
     color: var(--text-color);
@@ -249,7 +249,7 @@ header .container
     background-color: #FFF;
 }
 
-.about-flex
+.about-flex /*flex box */
 {
     display: flex;
     align-items: center;
@@ -290,7 +290,7 @@ footer
     padding: 60px 0 20px 0;
 }
 
-.footer-content
+.footer-content /*flex box */
 {
     display: flex;
     justify-content: space-between;
@@ -386,28 +386,41 @@ footer
     font-size: 0.9em;
 }
 
+.autor
+{
+    color: #FFFFFF;              
+    font-weight: bold;         
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-@media (max-width: 992px) {
+.autor:hover
+{
+    color: #F05E23;
+}
+
+@media (max-width: 992px) {   /* place holder */
 }
 
 @media (max-width: 768px)
 {
-    .nav-menu
-    {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        background-color: var(--dark-bg);
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .nav-menu.active
-    {
-        display: flex;
-    }
+.nav-menu
+{
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background-color: var(--dark-bg);
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-menu.active
+{
+    display: flex;
+}
 
     .nav-menu li
     {
@@ -435,7 +448,7 @@ footer
         margin-top: 30px;
     }
 
-    .footer-content
+    .footer-content /*flex box */
     {
         flex-direction: column;
         text-align: center;
@@ -451,7 +464,7 @@ footer
 @media (max-width: 576px) {
 }
 
-#modal-overlay
+#modal-overlay /*flex box */
 {
     position: fixed;
     top: 0;
@@ -474,7 +487,7 @@ footer
     visibility: hidden;
 }
 
-#modal
+#modal /*flex box; janela */
 {
     background-color: #FFF;
     padding: 30px;
@@ -558,7 +571,7 @@ footer
 
 .carousel-images img.active
 {
-    opacity: 1;
+    opacity: 2;
 }
 
 .carousel-button
@@ -589,4 +602,40 @@ footer
 .carousel-button.next
 {
     right: 10px;
+}
+
+
+#back-to-top-btn
+{
+    display: none; 
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 0; 
+    transform: translateY(10px); 
+}
+
+#back-to-top-btn.show
+{
+    display: flex;
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+#back-to-top-btn:hover
+{
+    background-color: #D9511B; 
 }
